@@ -1,9 +1,10 @@
+import java.util.Locale;
 import java.util.Scanner;
 import java.util.Random;
 public class Main {
 
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IncorrectNumberException, InvalidResponseException {
 
         Scanner response = new Scanner(System.in);
         int min=1;
@@ -11,10 +12,19 @@ public class Main {
         int randomAnswer;
         int guessesSoFar=0;
         int guessedNumber=-1;
+        String playerName="";
+        String continueAnswer="";
         boolean stillPlaying=true;
         Random random = new Random();
         System.out.println("Hello! what is your name?");
-        String playerName=response.nextLine();
+        try
+        {
+            playerName = response.nextLine();
+        }
+        catch(Exception e)
+        {
+            e.printStackTrace();
+        }
         System.out.println("Well, "+playerName+", I am thinking of a number between 1 and 20");
 
         while(stillPlaying==true)
@@ -31,7 +41,20 @@ public class Main {
                     break;
                 }
                 System.out.println("Take a guess.");
-                guessedNumber =Integer.parseInt(response.nextLine());
+                try
+                {
+                    guessedNumber = Integer.parseInt(response.nextLine());
+                }
+                catch(NumberFormatException e)
+                {
+
+                    System.out.println("THAT WAS NOT A NUMBER");
+                    e.printStackTrace();
+                }
+                if(guessedNumber <0 || guessedNumber >20)
+                {
+                    throw new IncorrectNumberException("not a valid number!");
+                }
                 if (guessedNumber < randomAnswer)
                 {
                     guessesSoFar++;
@@ -51,6 +74,18 @@ public class Main {
                 }
             }
             System.out.println("would you like to play again? (y or n)");
+            try {
+                continueAnswer = (response.nextLine().toLowerCase());
+            }
+            catch(Exception e)
+            {
+                System.out.println();
+                e.printStackTrace();
+            }
+            if(!continueAnswer.equals("y") && !continueAnswer.equals("n"))
+            {
+                throw new InvalidResponseException("not a valid response! next time please type 'y' or 'n'");
+            }
             if(response.nextLine().equals("n"))
             {
                 break;
