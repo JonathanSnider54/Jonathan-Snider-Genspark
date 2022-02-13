@@ -1,3 +1,8 @@
+package main;
+
+import exceptions.IncorrectNumberException;
+import exceptions.InvalidResponseException;
+
 import java.util.Locale;
 import java.util.Scanner;
 import java.util.Random;
@@ -24,6 +29,10 @@ public class Main {
         catch(Exception e)
         {
             e.printStackTrace();
+        }
+        if(playerName.isBlank())
+        {
+            throw new InvalidResponseException("don't leave that blank!");
         }
         System.out.println("Well, "+playerName+", I am thinking of a number between 1 and 20");
 
@@ -74,7 +83,8 @@ public class Main {
                 }
             }
             System.out.println("would you like to play again? (y or n)");
-            try {
+            try
+            {
                 continueAnswer = (response.nextLine().toLowerCase());
             }
             catch(Exception e)
@@ -86,8 +96,9 @@ public class Main {
             {
                 throw new InvalidResponseException("not a valid response! next time please type 'y' or 'n'");
             }
-            if(response.nextLine().equals("n"))
+            if(continueAnswer.equals("n"))
             {
+                stillPlaying=false;
                 break;
             }
             else
