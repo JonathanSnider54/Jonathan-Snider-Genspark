@@ -9,7 +9,7 @@ import java.util.stream.Collectors;
 import static exceptions.NotAcceptableAnswerException.NotAcceptableAnswerReason;
 
 public class Hangman {
-    public static void main(String args[]) throws InvalidResponseException {
+    public static void main(String args[]) throws InvalidResponseException, NotAcceptableAnswerException {
         String wordToGuess="fatter";
         Scanner response = new Scanner(System.in);
         List<Character> lettersInWord= wordToGuess.chars().mapToObj(n -> (char)n).collect(Collectors.toList());
@@ -34,14 +34,17 @@ while(true)
     try
     {
         currentAnswer = response.nextLine().toLowerCase(Locale.ROOT);
-        if (!currentAnswer.matches("[a-zA-Z]+") || currentAnswer.length() > 1)
-        {
-            NotAcceptableAnswerReason(currentAnswer);
-        }
+
     }
     catch (Exception e)
     {
         e.printStackTrace();
+        break;
+    }
+    if (!currentAnswer.matches("[a-zA-Z]+") || currentAnswer.length() > 1)
+    {
+
+        throw new NotAcceptableAnswerException(NotAcceptableAnswerReason(currentAnswer));
     }
     //checking if letter has already been guessed in either the correct guesses made so far or the incorrect letters
     char charAnswer=currentAnswer.charAt(0);
@@ -74,8 +77,8 @@ while(true)
             }
             catch (Exception e)
             {
-                System.out.println();
                 e.printStackTrace();
+                break;
             }
             if (!currentAnswer.equals("y") && !currentAnswer.equals("n"))
             {
@@ -118,8 +121,8 @@ while(true)
             }
             catch (Exception e)
             {
-                System.out.println();
                 e.printStackTrace();
+                break;
             }
             if (!currentAnswer.equals("y") && !currentAnswer.equals("n"))
             {
@@ -127,7 +130,6 @@ while(true)
             }
             if (currentAnswer.equals("n"))
             {
-                //stillPlaying = false;
                 break;
             }
             else

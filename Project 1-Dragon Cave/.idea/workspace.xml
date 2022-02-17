@@ -43,7 +43,7 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="JUnit3" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3" value="junit.framework.TestCase" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../genspark-java-core/genspark-java-core/genspark-java-core" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project 5-Hangman" />
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.0" />
@@ -62,7 +62,7 @@
       <recent name="classes" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.DragonCave">
+  <component name="RunManager" selected="JUnit.DragonCaveTest.testDragonCaveBadNumber">
     <configuration name="DragonCave" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.DragonCave" />
       <module name="Project 1-Dragon Cave" />
@@ -91,7 +91,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="DragonCaveTest.testDragonCave" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="DragonCaveTest.testDragonCaveBadNumber" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Project 1-Dragon Cave" />
       <extension name="coverage">
         <pattern>
@@ -101,7 +101,7 @@
       </extension>
       <option name="PACKAGE_NAME" value="classes" />
       <option name="MAIN_CLASS_NAME" value="classes.DragonCaveTest" />
-      <option name="METHOD_NAME" value="testDragonCave" />
+      <option name="METHOD_NAME" value="testDragonCaveBadNumber" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -141,11 +141,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.DragonCaveTest.testDragonCaveBadNumber" />
         <item itemvalue="Application.DragonCave" />
         <item itemvalue="JUnit.DragonCaveTest" />
         <item itemvalue="JUnit.DragonCaveTest.testDragonCaveBadPath" />
         <item itemvalue="JUnit.DragonCaveTest.testDragonCaveNotANumber" />
-        <item itemvalue="JUnit.DragonCaveTest.testDragonCave" />
       </list>
     </recent_temporary>
   </component>
