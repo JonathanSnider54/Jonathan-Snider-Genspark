@@ -1,7 +1,8 @@
 package exceptions;
 
 public class IncorrectNumberException extends Exception {
-    public IncorrectNumberException (String errorMessage) {
+    public IncorrectNumberException (String errorMessage)
+    {
 
         super(errorMessage);
     }

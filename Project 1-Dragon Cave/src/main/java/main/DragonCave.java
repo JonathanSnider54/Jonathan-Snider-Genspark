@@ -1,11 +1,12 @@
 package main;
 
 
+
 import exceptions.IncorrectNumberException;
 
 import java.util.Scanner;
 
-public class Main {
+public class DragonCave {
 
 
     public static void main(String[] args) throws IncorrectNumberException {

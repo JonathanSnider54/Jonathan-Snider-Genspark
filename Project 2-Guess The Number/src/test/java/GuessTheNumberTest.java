@@ -1,6 +1,7 @@
+
 import exceptions.IncorrectNumberException;
 import exceptions.InvalidResponseException;
-import main.Main;
+import main.GuessTheNumber;
 import org.junit.jupiter.api.Test;
 
 import java.io.ByteArrayInputStream;
@@ -11,7 +12,7 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class GuessTheNumberTest {
-    public void testDragonCaveBadPath() throws Throwable {
+    public void testDragonCaveBadPath() throws IncorrectNumberException, InvalidResponseException {
         String userInput = String.format("Jonathan%sVega%sdanvega@gmail.com",
                 System.lineSeparator(),
                 System.lineSeparator());
@@ -21,7 +22,7 @@ public class GuessTheNumberTest {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(baos);
         System.setOut(printStream);
-        Main.main(null);
+        GuessTheNumber.main(null);
         String[] lines = baos.toString().split(System.lineSeparator());
         String actual = lines[lines.length-1];
         assertEquals(expected,actual);
@@ -38,7 +39,7 @@ public class GuessTheNumberTest {
         PrintStream printStream = new PrintStream(baos);
         System.setOut(printStream);
         String[] lines = baos.toString().split(System.lineSeparator());
-        Exception exception = assertThrows(InvalidResponseException.class, () -> Main.main(null));
+        Exception exception = assertThrows(InvalidResponseException.class, () -> GuessTheNumber.main(null));
         assertEquals("don't leave that blank!", exception.getMessage());
     }
 }

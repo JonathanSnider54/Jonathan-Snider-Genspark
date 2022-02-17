@@ -1,15 +1,16 @@
 package main;
 
+
 import exceptions.IncorrectNumberException;
 import exceptions.InvalidResponseException;
+import exceptions.TestException;
 
-import java.util.Locale;
-import java.util.Scanner;
 import java.util.Random;
-public class Main {
+import java.util.Scanner;
+public class GuessTheNumber {
 
 
-    public static void main(String[] args) throws IncorrectNumberException, InvalidResponseException {
+    public static void main(String[] args) throws InvalidResponseException, IncorrectNumberException {
 
         Scanner response = new Scanner(System.in);
         int min=1;

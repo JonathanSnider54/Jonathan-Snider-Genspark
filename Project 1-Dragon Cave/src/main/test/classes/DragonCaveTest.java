@@ -9,10 +9,10 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.PrintStream;
 
+
 import exceptions.IncorrectNumberException;
-import main.Main;
+import main.DragonCave;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.Assertions;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
@@ -30,7 +30,7 @@ public class DragonCaveTest{
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(baos);
         System.setOut(printStream);
-        Main.main(null);
+        DragonCave.main(null);
         String[] lines = baos.toString().split(System.lineSeparator());
         String actual = lines[lines.length-1];
         assertEquals(expected,actual);
@@ -47,7 +47,7 @@ public class DragonCaveTest{
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         PrintStream printStream = new PrintStream(baos);
         System.setOut(printStream);
-        Main.main(null);
+        DragonCave.main(null);
         String[] lines = baos.toString().split(System.lineSeparator());
         String actual = lines[lines.length-1];
         assertEquals(expected,actual);
@@ -65,7 +65,7 @@ public class DragonCaveTest{
         System.setOut(printStream);
         //Main.main(null);
         String[] lines = baos.toString().split(System.lineSeparator());
-        Exception exception = assertThrows(IncorrectNumberException.class, () -> Main.main(null));
+        Exception exception = assertThrows(IncorrectNumberException.class, () -> DragonCave.main(null));
         assertEquals("not a valid number!", exception.getMessage());
     }
 
