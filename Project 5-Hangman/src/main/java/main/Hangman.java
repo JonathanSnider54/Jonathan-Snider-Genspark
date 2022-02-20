@@ -43,7 +43,6 @@ while(true)
     }
     if (!currentAnswer.matches("[a-zA-Z]+") || currentAnswer.length() > 1)
     {
-
         throw new NotAcceptableAnswerException(NotAcceptableAnswerReason(currentAnswer));
     }
     //checking if letter has already been guessed in either the correct guesses made so far or the incorrect letters

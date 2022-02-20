@@ -32,14 +32,14 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Project 6-HumansVSGoblins" />
   </component>
   <component name="RecentsManager">
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.HangmanTest.testHangManResponsePlayAgainIncorrect">
+  <component name="RunManager" selected="JUnit.HangmanTest">
     <configuration name="Hangman" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="main.Hangman" />
       <module name="Hangman" />
@@ -78,10 +78,10 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.HangmanTest.testHangManResponsePlayAgainIncorrect" />
         <item itemvalue="JUnit.HangmanTest" />
-        <item itemvalue="JUnit.HangmanTest.testHangManNotALetter" />
         <item itemvalue="Application.Hangman" />
+        <item itemvalue="JUnit.HangmanTest.testHangManResponsePlayAgainIncorrect" />
+        <item itemvalue="JUnit.HangmanTest.testHangManNotALetter" />
       </list>
     </recent_temporary>
   </component>
