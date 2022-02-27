@@ -4,8 +4,8 @@ package classes;
 import exceptions.InvalidMoveException;
 import exceptions.InvalidResponseException;
 
+import javax.swing.*;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.Locale;
 import java.util.Scanner;
 
@@ -18,10 +18,10 @@ public class Land {
     {
         this.acrossLength = acrossLength;
         this.verticalLength = verticalLength;
-        this.XYCoordinates=new ArrayList<ArrayList<String>>(acrossLength);
+        this.XYCoordinates= new ArrayList<>(acrossLength);
         for(int i=0;i<acrossLength;i++)
         {
-            ArrayList<String> listToAdd=new ArrayList<String>();
+            ArrayList<String> listToAdd= new ArrayList<>();
 
             for(int j=0;j<verticalLength;j++)
             {
@@ -72,9 +72,10 @@ public void printLand()
 
     public void playGame(Human player,Land playBoard,Goblin goblin) throws InvalidMoveException, InvalidResponseException {
         Scanner response = new Scanner(System.in);
-        String currentAnswer="";
+        String currentAnswer;
         System.out.println("let's slay some goblins (hopefully!)");
         playBoard.printLand();
+
         while(true)
         {
             System.out.println("enter a direction: "+Human.getApprovedMoves());
@@ -89,7 +90,7 @@ public void printLand()
             }
             player.makeMove(currentAnswer,playBoard);
             //player is alive due to goblin slaying
-            if(player.isSlayedGoblin()==true)
+            if(player.isSlayedGoblin())
             {
                 playBoard.printLand();
                 player.setSlayedGoblin(false);
@@ -138,6 +139,8 @@ public void printLand()
             }
         }
     }
+
+
 
     @Override
     public String toString() {

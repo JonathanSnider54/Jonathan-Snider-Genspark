@@ -6,6 +6,9 @@ import classes.Land;
 import exceptions.InvalidMoveException;
 import exceptions.InvalidResponseException;
 
+import javax.swing.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.*;
 
 public class HumansVSGoblins {
@@ -18,7 +21,6 @@ public class HumansVSGoblins {
         Goblin goblin=new Goblin();
         player.spawnHuman(playBoard);
         goblin.spawnGoblin(playBoard, player.getxCoordinate(), player.getyCoordinate());
-        //playing game
         playBoard.playGame(player,playBoard,goblin);
 
 
