@@ -36,11 +36,7 @@ public class HumansVSGoblinsTest {
         testPlayer.setyCoordinate(1);
         testPlayer.spawnHuman(testLand);
         bot.mouseMove(350,800);
-        try {
-            Thread.sleep(250);
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
+        try {Thread.sleep(250);} catch (InterruptedException ex) {}
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         try{Thread.sleep(250);}catch(InterruptedException e){}
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
@@ -57,11 +53,7 @@ public class HumansVSGoblinsTest {
         testPlayer.spawnHuman(testLand);
         testGoblin.spawnGoblin(testLand);
         bot.mouseMove(350,800);
-        try {
-            Thread.sleep(250);
-        } catch (InterruptedException ex) {
-            ex.printStackTrace();
-        }
+        try {Thread.sleep(250);}catch (InterruptedException ex) {}
         bot.mousePress(InputEvent.BUTTON1_DOWN_MASK);
         try{Thread.sleep(250);}catch(InterruptedException e){}
         bot.mouseRelease(InputEvent.BUTTON1_DOWN_MASK);
