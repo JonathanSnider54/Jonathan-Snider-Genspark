@@ -1,4 +1,4 @@
-package com.example.restfulAPIExemple.DAO;
+package com.example.restfulAPIExemple.Service;
 
 import com.example.restfulAPIExemple.entity.Furniture;
 import org.springframework.stereotype.Component;
@@ -11,5 +11,5 @@ public interface FurnitureService {
     public Furniture getFurnitureById(int furnitureID);
     public Furniture addFurniture(Furniture furnitureToAdd);
     public Furniture updateFurniture(Furniture furnitureToUpdate);
-    public void deleteFurniture(Furniture furnitureToDelete);
+    public void deleteFurniture(int furnitureToDelete);
 }

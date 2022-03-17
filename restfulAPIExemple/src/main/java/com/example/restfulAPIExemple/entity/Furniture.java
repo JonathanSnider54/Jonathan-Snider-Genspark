@@ -1,6 +1,13 @@
 package com.example.restfulAPIExemple.entity;
 
+import javax.persistence.*;
+
+@Entity
+@Table
 public class Furniture {
+    @Id
+    @Column
+    @GeneratedValue(strategy=GenerationType.AUTO)
     private int id;
     private float price;
     private String name;

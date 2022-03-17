@@ -1,6 +1,6 @@
 package com.example.restfulAPIExemple.controller;
 
-import com.example.restfulAPIExemple.DAO.FurnitureService;
+import com.example.restfulAPIExemple.Service.FurnitureService;
 import com.example.restfulAPIExemple.entity.Furniture;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -44,7 +44,7 @@ public class FurnitureController {
     @DeleteMapping("/deleteFurniture")
     public void deleteFurniture(@RequestBody Furniture furnitureToDelete)
     {
-        furnitureService.deleteFurniture(furnitureToDelete);
+        furnitureService.deleteFurniture(furnitureToDelete.getId());
     }
 
 
